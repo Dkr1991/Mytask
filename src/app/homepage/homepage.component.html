@@ -38,42 +38,36 @@
 
                 <form #frm="ngForm">
                     <div class="input-container">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="input-field" #fname="ngModel" pattern="[a-z A-Z]*" ngModel name='firstName'
-                                    placeholder="First name" required>
-                            </div>
-                            <div *ngIf="fname?.touched ">
+                        <input class="input-field" ngModel type="text" #firstName="ngModel" pattern="[a-z A-Z]*"
+                            required placeholder="firstName" name="firstName">
+                    </div>
+                    <div *ngIf="firstName?.touched ">
 
-                                <div *ngIf="fname.errors?.required" style="color: red">
-                                    firstName is required
-                                </div>
-                            </div>
-                            <div *ngIf="fname?.touched ">
-
-                                    <div *ngIf="fname.errors?.pattern" style="color: red">
-                                        name must be a character
-                                    </div>
-                                </div>
-                            <div class="col">
-                                <input type="text" name='lastName' #lname="ngModel" pattern="[a-z A-Z]*" ngModel class="input-field" required
-                                    placeholder="Last name">
-                            </div>
-                            <div *ngIf="lname?.touched ">
-
-                                <div *ngIf="lname.errors?.required" style="color: red">
-                                    lastName is required
-                                </div>
-                                <div *ngIf="lname.errors?.pattern" style="color: red">
-                                        lastName must be character
-                                    </div>
-                            </div>
+                        <div *ngIf="firstName.errors?.required" style="color: red">
+                            firstName is required
+                        </div>
+                        <div *ngIf="firstName.errors?.pattern" style="color: red">
+                            enter valid Name
                         </div>
                     </div>
 
                     <div class="input-container">
-                        <input class="input-field" ngModel type="text" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required placeholder="Email"
-                            name="email">
+                        <input class="input-field" ngModel type="text" #lastName="ngModel" pattern="[a-z A-Z]*" required
+                            placeholder="lastName" name="lastName">
+                    </div>
+                    <div *ngIf="lastName?.touched ">
+
+                        <div *ngIf="lastName.errors?.required" style="color: red">
+                            lastName is required
+                        </div>
+                        <div *ngIf="lastName.errors?.pattern" style="color: red">
+                            enter valid Name
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <input class="input-field" ngModel type="text" #email="ngModel"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required placeholder="Email" name="email">
                     </div>
                     <div *ngIf="email?.touched ">
 
@@ -81,12 +75,12 @@
                             email is required
                         </div>
                         <div *ngIf="email.errors?.pattern" style="color: red">
-                                enter valid email
-                            </div>
+                            enter valid email
+                        </div>
                     </div>
                     <div class="input-container">
-                        <input class="input-field" ngModel type="tel" #phn="ngModel" pattern="[0-9]" minlength="10" maxlength="10" required
-                            placeholder="phonenumber" name="phone">
+                        <input class="input-field" ngModel type="tel" #phn="ngModel" pattern="[0-9]" minlength="10"
+                            maxlength="10" required placeholder="phonenumber" name="phone">
                     </div>
                     <div *ngIf="phn?.touched ">
 
@@ -94,8 +88,8 @@
                             phonenumber is required
                         </div>
                         <div *ngIf="phn.errors?.minlength" style="color: red">
-                                enter 10 digit number
-                            </div>
+                            enter 10 digit number
+                        </div>
                     </div>
 
                     <input #rangeref type="range" min="1" max="100" value="50" class="slider" id="myRange">
@@ -111,10 +105,10 @@
                     </select>
                     <div *ngIf="state?.touched ">
 
-                            <div *ngIf="state.errors?.required" style="color: red">
-                                    choose state?
-                            </div>
+                        <div *ngIf="state.errors?.required" style="color: red">
+                            choose state?
                         </div>
+                    </div>
                     <br><br>
                     <label for="sel1">Select country (select one):</label>
                     <select class="input-field" id="sel1" ngModel name="country" #country="ngModel" required>
@@ -125,20 +119,21 @@
                     </select>
                     <div *ngIf="country?.touched ">
 
-                            <div *ngIf="country.errors?.required" style="color: red">
-                                    choose country?
-                            </div>
+                        <div *ngIf="country.errors?.required" style="color: red">
+                            choose country?
                         </div>
+                    </div>
                     <br><br>
                     <div class="input-container">
-                        <input class="input-field" type="text" ngModel placeholder="address" name="address" #address="ngModel" required>
+                        <input class="input-field" type="text" ngModel placeholder="address" name="address"
+                            #address="ngModel" required>
                     </div>
                     <div *ngIf="address?.touched ">
 
-                            <div *ngIf="address.errors?.required" style="color: red">
-                                    address required
-                            </div>
+                        <div *ngIf="address.errors?.required" style="color: red">
+                            address required
                         </div>
+                    </div>
 
 
                     <div class="row">
