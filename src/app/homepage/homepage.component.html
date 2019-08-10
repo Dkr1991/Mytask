@@ -1,0 +1,157 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Demo app</a>
+    <form class="form-inline">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Jobs</a>
+        </li>
+    </form>
+</nav>
+
+<!-- Job serch Filed -->
+<div class="frm-serch">
+    <div class="form-group mb-2">
+        <h1> <i> i'm looking for</i></h1>
+    </div>
+
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Enter job description">
+
+    <button type="submit" class="btn btn-primary btn-serch">Serch</button>
+
+    <button class="btn btn-primary btn-register" (click)="open(content)">Register</button>
+</div>
+
+<!-- popup templet -->
+
+<ng-template #content let-modal>
+    <!-- The Modal -->
+    <div class="modal-body">
+        <div class="card" style="width: 20rem;"> <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png">
+            <div> <a href="www.google.com"> upload your file </a> </div>
+            <div class="card-body">
+
+                <form #frm="ngForm">
+                    <div class="input-container">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="input-field" #fname="ngModel" pattern="[a-z A-Z]*" ngModel name='firstName'
+                                    placeholder="First name" required>
+                            </div>
+                            <div *ngIf="fname?.touched ">
+
+                                <div *ngIf="fname.errors?.required" style="color: red">
+                                    firstName is required
+                                </div>
+                            </div>
+                            <div *ngIf="fname?.touched ">
+
+                                    <div *ngIf="fname.errors?.pattern" style="color: red">
+                                        name must be a character
+                                    </div>
+                                </div>
+                            <div class="col">
+                                <input type="text" name='lastName' #lname="ngModel" pattern="[a-z A-Z]*" ngModel class="input-field" required
+                                    placeholder="Last name">
+                            </div>
+                            <div *ngIf="lname?.touched ">
+
+                                <div *ngIf="lname.errors?.required" style="color: red">
+                                    lastName is required
+                                </div>
+                                <div *ngIf="lname.errors?.pattern" style="color: red">
+                                        lastName must be character
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <input class="input-field" ngModel type="text" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required placeholder="Email"
+                            name="email">
+                    </div>
+                    <div *ngIf="email?.touched ">
+
+                        <div *ngIf="email.errors?.required" style="color: red">
+                            email is required
+                        </div>
+                        <div *ngIf="email.errors?.pattern" style="color: red">
+                                enter valid email
+                            </div>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-field" ngModel type="tel" #phn="ngModel" pattern="[0-9]" minlength="10" maxlength="10" required
+                            placeholder="phonenumber" name="phone">
+                    </div>
+                    <div *ngIf="phn?.touched ">
+
+                        <div *ngIf="phn.errors?.required" style="color: red">
+                            phonenumber is required
+                        </div>
+                        <div *ngIf="phn.errors?.minlength" style="color: red">
+                                enter 10 digit number
+                            </div>
+                    </div>
+
+                    <input #rangeref type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <p>Age: <span id="demo"> {{rangeref.value}}</span></p>
+
+
+                    <label for="sel1">Select state (select one):</label>
+                    <select class="input-field" id="sel1" ngModel name="state" #state="ngModel" required>
+                        <option>karnataka</option>
+                        <option>Andra</option>
+                        <option>maharashtra</option>
+                        <option>kerala</option>
+                    </select>
+                    <div *ngIf="state?.touched ">
+
+                            <div *ngIf="state.errors?.required" style="color: red">
+                                    choose state?
+                            </div>
+                        </div>
+                    <br><br>
+                    <label for="sel1">Select country (select one):</label>
+                    <select class="input-field" id="sel1" ngModel name="country" #country="ngModel" required>
+                        <option>India</option>
+                        <option>pakistan</option>
+                        <option>china</option>
+                        <option>usa</option>
+                    </select>
+                    <div *ngIf="country?.touched ">
+
+                            <div *ngIf="country.errors?.required" style="color: red">
+                                    choose country?
+                            </div>
+                        </div>
+                    <br><br>
+                    <div class="input-container">
+                        <input class="input-field" type="text" ngModel placeholder="address" name="address" #address="ngModel" required>
+                    </div>
+                    <div *ngIf="address?.touched ">
+
+                            <div *ngIf="address.errors?.required" style="color: red">
+                                    address required
+                            </div>
+                        </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-danger" (click)='modal.close()'>cancel</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-primary"
+                                (click)='submit(frm.value);modal.close()' [disabled]="frm.invalid">submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,98 @@
+<div class="container" *ngFor="let user of users">
+
+
+    <div class='img-section'>
+        <h2>profiles</h2>
+        <img src="http://monumentfamilydentistry.com/wp-content/uploads/2015/11/user-placeholder.png">
+        <button class='btn btn-primary'>Edit Photo</button>
+        <button class='btn btn-primary' (click)='open(content , user)'>Edit Profile</button>
+    </div>
+
+    <div class="text-section">
+        <p>I am {{user.firstName}} and i am about years and you can send your emails to {{user.email}}
+            . i live in the state of {{user.state}} , please reach out to me on my phone number {{user.phone}}
+        </p>
+        <button class='btn btn-primary'>I Agree</button>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+    <!-- The Modal -->
+    <div class="modal-body">
+        <div class="card" style="width: 20rem;"> <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png">
+            <div> <a href="www.google.com"> upload your file </a> </div>
+            <div class="card-body">
+
+                <form #frm="ngForm">
+                    <div class="input-container">
+                        <div class="row">
+
+                            <div style="display: none" class="col">
+                                <input type="text" class="input-field" [(ngModel)]='userform.id' name='id'
+                                    placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="input-field" [(ngModel)]='userform.firstName' name='firstName'
+                                    placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" name='lastName' [(ngModel)]='userform.lastName' class="input-field"
+                                    placeholder="Last name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <input class="input-field" [(ngModel)]='userform.email' type="text" placeholder="Email"
+                            name="email">
+                    </div>
+
+                    <div class="input-container">
+                        <input class="input-field" [(ngModel)]='userform.phone' type="number"  placeholder="phonenumber"
+                            name="phone">
+                    </div>
+
+
+                    <input #rangeref type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <p>Age: <span id="demo"> {{rangeref.value}}</span></p>
+
+
+                    <label for="sel1">Select state (select one):</label>
+                    <select class="input-field" id="sel1" [(ngModel)]='userform.state' name="state">
+                        <option>karnataka</option>
+                        <option>Andra</option>
+                        <option>maharashtra</option>
+                        <option>kerala</option>
+                    </select>
+                    <br><br>
+                    <label for="sel1">Select country (select one):</label>
+                    <select class="input-field" id="sel1" [(ngModel)]='userform.country' name="country">
+                        <option>India</option>
+                        <option>pakistan</option>
+                        <option>china</option>
+                        <option>usa</option>
+                    </select>
+                    <br><br>
+                    <div class="input-container">
+                        <input class="input-field" type="text" [(ngModel)]='userform.address' placeholder="address"
+                            name="address">
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-danger" (click)='modal.close()'>cancel</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-primary"
+                                (click)='submit(frm.value);modal.close()'>submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>

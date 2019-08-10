@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "lokisha",
+      "lastName": "cs",
+      "email": "loki@gmail.com",
+      "phone": 1234567890,
+      "state": "maharashtra",
+      "country": "pakistan",
+      "address": "some city"
+    },
+    {
+      "id": 2,
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "dkr1991@outlook.com",
+      "phone": 9901802495,
+      "state": "karnataka",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara"
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "dkr1991@outlook.com",
+      "phone": 9901802495,
+      "state": "Andra",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 3
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "test@gmail.com",
+      "phone": 9901802495,
+      "state": "Andra",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 4
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "test@gmail.com",
+      "phone": 9901802495,
+      "state": "Andra",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 5
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "test@gmail.com",
+      "phone": 9901802495,
+      "state": "Andra",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 6
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "dkr1991@outlook.com",
+      "phone": 9901802495,
+      "state": "Andra",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 7
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "test@gmail.com",
+      "phone": 9901802495,
+      "state": "karnataka",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 8
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "dkr1991@outlook.com",
+      "phone": 9901802495,
+      "state": "karnataka",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 9
+    },
+    {
+      "firstName": "Dkeemanth",
+      "lastName": "Kumar",
+      "email": "test@gmail.com",
+      "phone": 9901802495,
+      "state": "karnataka",
+      "country": "India",
+      "address": "Vyalikaval, HBCS Layout, Nagawara",
+      "id": 10
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "phone": "",
+      "state": "",
+      "country": "",
+      "address": "",
+      "id": 11
+    }
+  ]
+}
