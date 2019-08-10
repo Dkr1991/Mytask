@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="input-container">
-                        <input class="input-field" ngModel type="tel" #phn="ngModel" pattern="[0-9]" minlength="10"
+                        <input class="input-field" ngModel type="number" #phn="ngModel" pattern="[0-9]*" minlength="10"
                             maxlength="10" required placeholder="phonenumber" name="phone">
                     </div>
                     <div *ngIf="phn?.touched ">
